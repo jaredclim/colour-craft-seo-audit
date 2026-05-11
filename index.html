@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SEO Audit · Colour Craft Network · 2026</title>
-<meta name="description" content="A 3-minute scan of the Colour Craft web architecture. Same template across Richmond-Delta and Philadelphia means a handful of fixes lift the whole network.">
+<title>SEO Audit · Colour Craft Painting · 2026</title>
+<meta name="description" content="A 3-minute scan of where Colour Craft shows up online. Brand strengths, fixable defects, and the punch list for Basecoat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, .wordmark, .hero-eyebrow, .section-eyebrow, .opp-rank, .toc-label, .callout-label, .stat-card .label, .footer-wordmark { font-family: 'Montserrat', sans-serif; }
+  h1, h2, h3, .wordmark, .hero-eyebrow, .section-eyebrow, .opp-rank, .toc-label, .callout-label, .stat-card .label, .footer-wordmark, .territory-name { font-family: 'Montserrat', sans-serif; }
 
   .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
   .wrap-wide { max-width: 980px; margin: 0 auto; padding: 0 24px; }
@@ -90,12 +90,12 @@
     font-weight: 800;
     letter-spacing: -0.02em;
     color: #fff;
-    max-width: 760px;
+    max-width: 720px;
   }
   .hero h1 .highlight { color: var(--gold); }
   .hero-sub {
     margin: 0 auto;
-    max-width: 560px;
+    max-width: 540px;
     font-size: 18px;
     line-height: 1.5;
     color: #e5d3a5;
@@ -116,16 +116,14 @@
 
   .opener { padding: 44px 0 12px; background: var(--cream); }
   .opener .pull {
-    font-size: 21px;
+    font-size: 20px;
     line-height: 1.45;
     font-weight: 600;
     color: var(--brown);
-    margin: 0 0 0;
+    margin: 0 auto;
     letter-spacing: -0.01em;
     text-align: center;
     max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .toc {
@@ -227,6 +225,13 @@
     color: var(--text-muted);
     line-height: 1.4;
   }
+  .stat-card .sub code {
+    background: var(--cream-soft);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+  }
 
   .callout {
     background: var(--white);
@@ -277,41 +282,50 @@
     letter-spacing: -0.005em;
   }
 
-  /* Microsite comparison cards */
-  .compare-grid {
+  /* Territory cards */
+  .territory-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin: 0 0 8px;
   }
-  .compare-card {
+  .territory-card {
     background: var(--white);
     border: 1px solid var(--border);
     border-top: 4px solid var(--brown);
     border-radius: 4px;
-    padding: 22px 22px;
+    padding: 20px 22px;
     box-shadow: var(--shadow);
   }
-  .compare-card.gold-top { border-top-color: var(--gold-deep); }
-  .compare-card h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    margin: 0 0 4px;
-    color: var(--brown-deep);
-    letter-spacing: -0.01em;
-  }
-  .compare-card .city {
+  .territory-card.gold-top { border-top-color: var(--gold-deep); }
+  .territory-card.muted-top { border-top-color: var(--text-muted); }
+  .territory-card .city {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold-deep);
-    margin: 0 0 14px;
+    margin: 0 0 6px;
   }
-  .compare-card ul { margin: 0; padding-left: 18px; }
-  .compare-card ul li { margin: 5px 0; font-size: 14.5px; line-height: 1.45; color: var(--text); }
-  .compare-card .red-flag { color: var(--red); font-weight: 600; }
-  .compare-card .green-flag { color: var(--green); font-weight: 600; }
+  .territory-card .territory-name {
+    font-size: 17px;
+    margin: 0 0 12px;
+    color: var(--brown-deep);
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+  .territory-card ul { margin: 0; padding-left: 18px; }
+  .territory-card ul li { margin: 5px 0; font-size: 14px; line-height: 1.45; color: var(--text); }
+  .territory-card code {
+    background: var(--cream-soft);
+    color: var(--brown-deep);
+    font-size: 12.5px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .territory-card .red-flag { color: var(--red); font-weight: 700; }
+  .territory-card .green-flag { color: var(--green); font-weight: 700; }
 
   .opportunity {
     background: var(--white);
@@ -345,8 +359,7 @@
   }
   .opp-list { margin: 0; padding-left: 18px; }
   .opp-list li { margin: 7px 0; font-size: 15px; line-height: 1.5; color: var(--text); }
-  .opp-list li code,
-  .opp-row code {
+  .opp-list li code {
     background: var(--cream-soft);
     color: var(--brown-deep);
     font-size: 13.5px;
@@ -377,9 +390,8 @@
   .badge.high { background: var(--green-soft); color: var(--green); }
   .badge.med { background: var(--gold-soft); color: var(--gold-deep); }
   .badge.low { background: var(--cream-soft); color: var(--brown-soft); }
-  .badge.now { background: var(--brown-deep); color: var(--gold); }
   .badge.critical { background: var(--red-soft); color: var(--red); }
-  .badge.network { background: var(--brown-deep); color: var(--gold); }
+  .badge.brand { background: var(--brown-deep); color: var(--gold); }
 
   .vision-card {
     background: linear-gradient(135deg, var(--brown) 0%, var(--brown-deep) 100%);
@@ -422,12 +434,12 @@
     .audit-section { padding: 44px 0; }
     .audit-section h2 { font-size: 26px; }
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .compare-grid { grid-template-columns: 1fr; }
+    .territory-grid { grid-template-columns: 1fr; }
     .opportunity { padding: 22px 20px; }
     .opportunity h3 { font-size: 19px; }
     .vision-card { padding: 24px 22px; }
     .toc { padding: 20px 20px; }
-    .opener .pull { font-size: 18px; }
+    .opener .pull { font-size: 17px; }
   }
 </style>
 </head>
@@ -435,9 +447,9 @@
 
 <header class="hero">
   <div class="wordmark">Colour Craft Painting</div>
-  <p class="hero-eyebrow">SEO Audit · Franchise Network</p>
-  <h1>Same template. Same defects. <span class="highlight">Fix once, lift every franchise.</span></h1>
-  <p class="hero-sub">A 3-minute scan of the Colour Craft web architecture across Richmond-Delta and Philadelphia. What to send Basecoat.</p>
+  <p class="hero-eyebrow">SEO Audit · The Brand Online</p>
+  <h1>Where Colour Craft shows up online, and <span class="highlight">what's holding it back.</span></h1>
+  <p class="hero-sub">A 3-minute read on the brand's SEO position and the punch list to send Basecoat.</p>
   <div class="hero-meta">
     <span>May 2026</span><span>Read: 3 min</span><span>By Claude Code</span>
   </div>
@@ -445,17 +457,18 @@
 
 <div class="opener">
   <div class="wrap">
-    <p class="pull">The content Basecoat built is strong. The technical layer underneath has the same set of fixable defects on both microsites because they share the same template.</p>
+    <p class="pull">Colour Craft has more digital surface area than most painting brands in either market. The content Basecoat built is strong. A handful of fixable defects are quietly capping how the brand actually performs in search.</p>
 
     <div class="toc">
       <p class="toc-label">In here</p>
       <ol>
-        <li><a href="#snapshot">Network snapshot</a></li>
-        <li><a href="#microsites">Microsite comparison</a></li>
+        <li><a href="#snapshot">The brand online today</a></li>
+        <li><a href="#territories">Where Colour Craft shows up</a></li>
         <li><a href="#strengths">What's working</a></li>
+        <li><a href="#diagnosis">The honest read</a></li>
         <li><a href="#fixes">Critical fixes for Basecoat</a></li>
         <li><a href="#beyond">Outside Basecoat</a></li>
-        <li><a href="#vision">Network-wide win</a></li>
+        <li><a href="#vision">What this becomes</a></li>
       </ol>
     </div>
   </div>
@@ -464,84 +477,95 @@
 <section class="audit-section" id="snapshot">
   <div class="wrap">
     <p class="section-eyebrow">Section 01</p>
-    <h2>Network snapshot.</h2>
+    <h2>The Colour Craft brand online today.</h2>
 
     <div class="stat-grid">
       <div class="stat-card">
-        <p class="label">Microsites live</p>
-        <div class="value">2</div>
-        <div class="sub">Richmond-Delta + Philadelphia</div>
+        <p class="label">Territories online</p>
+        <div class="value">4</div>
+        <div class="sub">Vancouver, Burnaby, Richmond-Delta, Philadelphia</div>
       </div>
       <div class="stat-card">
-        <p class="label">Pages indexed-ready</p>
-        <div class="value">42+</div>
-        <div class="sub">21 per microsite, mirror templates</div>
+        <p class="label">Pages built across brand</p>
+        <div class="value">70+</div>
+        <div class="sub">Substantial digital footprint</div>
       </div>
       <div class="stat-card">
-        <p class="label">Avg page word count</p>
+        <p class="label">Avg location-page depth</p>
         <div class="value">7,200</div>
-        <div class="sub">Well above local competitors</div>
+        <div class="sub">Words per page. Above most competitors.</div>
       </div>
       <div class="stat-card">
-        <p class="label">Microsites in root sitemap</p>
-        <div class="value">0 of 2</div>
-        <div class="sub">Neither sub-sitemap referenced</div>
-      </div>
-      <div class="stat-card">
-        <p class="label">Homepage schema status</p>
+        <p class="label">Homepage schema</p>
         <div class="value">Broken</div>
-        <div class="sub"><code style="background:var(--cream-soft);padding:1px 5px;border-radius:3px;font-family:ui-monospace,monospace;font-size:12px;">"telephone":"COMPANYPHONE"</code></div>
+        <div class="sub">Contains <code>"telephone":"COMPANYPHONE"</code></div>
       </div>
       <div class="stat-card">
-        <p class="label">URL typos in Philadelphia</p>
+        <p class="label">Microsite sitemaps in root</p>
+        <div class="value">0 of 3</div>
+        <div class="sub">Google has to find them on its own</div>
+      </div>
+      <div class="stat-card">
+        <p class="label">URL typos live</p>
         <div class="value">2</div>
-        <div class="sub">randor-township, king-of-prussias</div>
+        <div class="sub">Philadelphia: <code>randor</code>, <code>king-of-prussias</code></div>
       </div>
     </div>
 
     <div class="callout gold">
       <p class="callout-label">The headline</p>
-      <p>Every defect listed in this audit lives in the franchisor template. Fix at the template level once and the lift cascades across both current microsites plus every future franchise rollout.</p>
+      <p>Colour Craft is built on the right foundation. The defects below sit at the franchisor template level, which means a small set of fixes lifts the entire brand, every existing market, and every future franchise.</p>
     </div>
   </div>
 </section>
 
-<section class="audit-section cream" id="microsites">
+<section class="audit-section cream" id="territories">
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 02</p>
-    <h2>Microsite comparison.</h2>
-    <p class="lede">Both microsites built from the same template. Same strengths, same defects.</p>
+    <h2>Where Colour Craft shows up.</h2>
+    <p class="lede">Four territories with a real web presence. Same template across all of them, so the strengths and gaps are shared.</p>
 
-    <div class="compare-grid">
-      <div class="compare-card">
-        <p class="city">Richmond & Delta · BC</p>
-        <h4>21 pages · 6 neighborhood pages</h4>
+    <div class="territory-grid">
+      <div class="territory-card gold-top">
+        <p class="city">Vancouver · BC · Brad</p>
+        <p class="territory-name">Vancouver & Sea to Sky</p>
         <ul>
-          <li><span class="green-flag">✓</span> #1 organic for "painters Delta BC"</li>
-          <li><span class="green-flag">✓</span> Localized angles (coastal finish, heritage)</li>
-          <li><span class="green-flag">✓</span> 6,800-7,500 words per page</li>
-          <li><span class="red-flag">✗</span> No schema on location pages</li>
-          <li><span class="red-flag">✗</span> Sub-sitemap not in root robots.txt</li>
-          <li><span class="red-flag">✗</span> Inherits broken franchisor schema</li>
+          <li>28 sub-pages, deepest microsite in the network</li>
+          <li>19,650-word homepage</li>
+          <li><span class="green-flag">✓</span> Strong title and meta</li>
+          <li><span class="red-flag">✗</span> Sub-sitemap not referenced in root</li>
         </ul>
       </div>
-      <div class="compare-card gold-top">
-        <p class="city">Philadelphia · PA</p>
-        <h4>21 pages · 5 neighborhood pages</h4>
+      <div class="territory-card muted-top">
+        <p class="city">Burnaby · BC</p>
+        <p class="territory-name">Burnaby (single page)</p>
         <ul>
-          <li><span class="green-flag">✓</span> 7,724-word homepage</li>
-          <li><span class="green-flag">✓</span> Mirror structure to Richmond-Delta</li>
-          <li><span class="red-flag">✗</span> URL typo: <code>/randor-township-wayne/</code> (should be radnor)</li>
-          <li><span class="red-flag">✗</span> URL typo: <code>/king-of-prussias/</code> (should be king-of-prussia)</li>
-          <li><span class="red-flag">✗</span> No schema on location pages</li>
-          <li><span class="red-flag">✗</span> Sub-sitemap not in root robots.txt</li>
+          <li>One landing page, no sub-pages</li>
+          <li>19,441 words on one page</li>
+          <li><span class="red-flag">✗</span> No sub-sitemap (returns 404)</li>
+          <li><span class="red-flag">✗</span> No neighborhood pages, unlike sister markets</li>
         </ul>
       </div>
-    </div>
-
-    <div class="callout">
-      <p class="callout-label">Pattern</p>
-      <p>Identical strengths. Identical defects. The Philadelphia URL typos are permanent unless fixed soon (renaming a slug requires 301 redirects to preserve any link equity built up).</p>
+      <div class="territory-card">
+        <p class="city">Richmond & Delta · BC · Jared</p>
+        <p class="territory-name">Richmond, Delta, Steveston, Tsawwassen, Ladner</p>
+        <ul>
+          <li>21 sub-pages, 6 neighborhood pages</li>
+          <li>Already #1 organic for "painters Delta BC"</li>
+          <li><span class="green-flag">✓</span> Localized angles per neighborhood</li>
+          <li><span class="red-flag">✗</span> No schema on location pages</li>
+        </ul>
+      </div>
+      <div class="territory-card gold-top">
+        <p class="city">Philadelphia · PA · GianCarlo</p>
+        <p class="territory-name">Chestnut Hill, Lower Merion, King of Prussia, Radnor, Media</p>
+        <ul>
+          <li>21 sub-pages, 5 neighborhood pages</li>
+          <li>Mirror structure to Richmond-Delta</li>
+          <li><span class="red-flag">✗</span> URL typo: <code>/randor-township-wayne/</code></li>
+          <li><span class="red-flag">✗</span> URL typo: <code>/king-of-prussias/</code></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -549,30 +573,30 @@
 <section class="audit-section" id="strengths">
   <div class="wrap">
     <p class="section-eyebrow">Section 03</p>
-    <h2>What's working.</h2>
+    <h2>What's working for the brand.</h2>
 
     <ul class="strengths">
-      <li><strong>Two full microsites built and live.</strong>21 pages each, all 200-status, with localized neighborhood-naming inside body copy.</li>
-      <li><strong>Content depth above local competitors.</strong>7,000+ word location pages while most local painters publish 800-1,500. Real moat once technical fixes ship.</li>
-      <li><strong>On-page basics correct at location level.</strong>Unique titles, meta descriptions, and H1s across neighborhood pages.</li>
-      <li><strong>Richmond-Delta already ranks #1 for "painters Delta BC."</strong>Proof the system works when content + indexing align.</li>
+      <li><strong>Real digital footprint across four markets.</strong>Most painting brands operate from a single page. Colour Craft has 70+ indexed-ready pages spanning two countries.</li>
+      <li><strong>Content depth above local competitors.</strong>7,000+ word location pages while most local painters publish 800-1,500. Genuine moat once technical fixes ship.</li>
+      <li><strong>On-page basics correct at the location level.</strong>Unique titles, meta descriptions, and H1s across most neighborhood pages.</li>
+      <li><strong>Proof the system works when aligned.</strong>Richmond-Delta already ranks #1 organic for "painters Delta BC."</li>
     </ul>
   </div>
 </section>
 
-<section class="audit-section dark" id="diagnosis-strip">
+<section class="audit-section dark" id="diagnosis">
   <div class="wrap">
     <div class="callout dark">
-      <p class="callout-label">In one line</p>
-      <p><strong>Strong content layer, weak technical layer, defects baked into the franchisor template.</strong></p>
+      <p class="callout-label">The honest read</p>
+      <p><strong>Strong content, weak technical hygiene, defects baked into the franchisor template.</strong></p>
     </div>
     <div class="callout dark">
-      <p class="callout-label">What this means</p>
-      <ul style="margin:0;padding-left:18px;color:#f0e3c4;">
-        <li style="margin:6px 0;line-height:1.5;">"Still being indexed" explains <em>some</em> of why microsites aren't fully ranking yet.</li>
-        <li style="margin:6px 0;line-height:1.5;">It doesn't explain the schema placeholder, missing FAQ markup, sitemap structure, or URL typos.</li>
-        <li style="margin:6px 0;line-height:1.5;">Those are build-time defects. Indexation can't resolve them.</li>
-        <li style="margin:6px 0;line-height:1.5;">A capable web team can clear most of them in an afternoon.</li>
+      <p class="callout-label">What this means in plain English</p>
+      <ul>
+        <li>"Still being indexed" explains some of why microsites aren't fully ranking yet.</li>
+        <li>It doesn't explain the schema placeholder, missing FAQ markup, sitemap structure, or URL typos.</li>
+        <li>Those are build-time defects. Indexation can't resolve them.</li>
+        <li>A capable web team can clear most of them in an afternoon.</li>
       </ul>
     </div>
   </div>
@@ -582,53 +606,53 @@
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 04</p>
     <h2>Critical fixes for Basecoat.</h2>
-    <p class="lede">Ordered by impact. Top three are network-wide. Each one fixed at the template level lifts both microsites plus every future franchise.</p>
+    <p class="lede">Ordered by impact. Most live in the franchisor template, so one fix lifts every territory.</p>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 01 · Network</span>
+      <span class="opp-rank">Fix 01 · Brand-wide</span>
       <h3>Replace the broken schema placeholder.</h3>
       <ul class="opp-list">
         <li><strong>Defect:</strong> franchisor homepage JSON-LD contains <code>"telephone":"COMPANYPHONE"</code>, a literal placeholder.</li>
-        <li><strong>Fix:</strong> rebuild as <code>LocalBusiness</code> with NAP, geo, areaServed, openingHours, priceRange, aggregateRating, sameAs links.</li>
-        <li><strong>Cascade:</strong> the broken schema is inherited site-wide. Single fix, network-wide lift.</li>
+        <li><strong>Fix:</strong> rebuild as proper <code>LocalBusiness</code> with name, address, telephone, geo, areaServed, openingHours, priceRange, aggregateRating, sameAs.</li>
+        <li><strong>Why it matters:</strong> the broken schema is what Google reads as Colour Craft's "entity card." Right now it's malformed brand-wide.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge critical">Critical</span>
         <span class="badge low">Low effort</span>
         <span class="badge high">High impact</span>
-        <span class="badge network">Network-wide</span>
+        <span class="badge brand">Brand-wide</span>
       </div>
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 02 · Network</span>
-      <h3>Add schema to every microsite location page.</h3>
+      <span class="opp-rank">Fix 02 · Brand-wide</span>
+      <h3>Add schema to every location page.</h3>
       <ul class="opp-list">
-        <li><strong>Defect:</strong> all 11 neighborhood pages (6 Richmond-Delta + 5 Philadelphia) have zero structured data.</li>
-        <li><strong>Fix:</strong> per-page <code>LocalBusiness</code> + <code>Service</code> schema with proper <code>areaServed</code>. Add to franchisor template so future franchises inherit.</li>
-        <li><strong>Why:</strong> unlocks local rich results across the entire network at once.</li>
+        <li><strong>Defect:</strong> all 11 neighborhood pages across Richmond-Delta + Philadelphia have zero structured data. Vancouver appears to be missing it too.</li>
+        <li><strong>Fix:</strong> per-page <code>LocalBusiness</code> + <code>Service</code> schema with proper <code>areaServed</code>. Add to franchisor template so every future franchise inherits.</li>
+        <li><strong>Why now:</strong> unlocks local rich results across the entire brand at once.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge critical">Critical</span>
         <span class="badge med">Med effort</span>
         <span class="badge high">High impact</span>
-        <span class="badge network">Network-wide</span>
+        <span class="badge brand">Brand-wide</span>
       </div>
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 03 · Network</span>
-      <h3>Reference both microsite sitemaps in root robots.txt.</h3>
+      <span class="opp-rank">Fix 03 · Brand-wide</span>
+      <h3>Reference every microsite sitemap in root robots.txt.</h3>
       <ul class="opp-list">
-        <li><strong>Defect:</strong> root <code>robots.txt</code> only points to the franchisor sitemap. Neither <code>/richmond-delta/sitemap_index.xml</code> nor <code>/philadelphia/sitemap_index.xml</code> is referenced.</li>
+        <li><strong>Defect:</strong> root <code>robots.txt</code> only points to the franchisor sitemap. Vancouver, Richmond-Delta, and Philadelphia microsites each have their own sub-sitemap that's not referenced anywhere Google reliably looks.</li>
         <li><strong>Fix:</strong> add a <code>Sitemap:</code> line for each microsite. Submit each in Google Search Console.</li>
-        <li><strong>Why this matters now:</strong> this is the most likely real cause of "still being indexed." Google has to stumble onto the microsites via internal links.</li>
+        <li><strong>Why this matters now:</strong> this is the most likely real cause behind "still being indexed."</li>
       </ul>
       <div class="opp-meta">
         <span class="badge critical">Critical</span>
         <span class="badge low">Low effort</span>
         <span class="badge high">High impact</span>
-        <span class="badge network">Network-wide</span>
+        <span class="badge brand">Brand-wide</span>
       </div>
     </div>
 
@@ -637,8 +661,8 @@
       <h3>Fix the two URL typos in Philadelphia.</h3>
       <ul class="opp-list">
         <li><strong>Defect:</strong> <code>/philadelphia/randor-township-wayne/</code> should be <code>radnor</code>. <code>/philadelphia/king-of-prussias/</code> should be <code>king-of-prussia</code>.</li>
-        <li><strong>Risk:</strong> typo URLs in major affluent suburbs hurt CTR and brand credibility. Permanent unless renamed soon.</li>
-        <li><strong>Fix:</strong> rename slugs, add 301 redirects from old URLs to preserve any link equity.</li>
+        <li><strong>Risk:</strong> typo URLs in major affluent suburbs hurt CTR, hurt brand credibility, and become harder to fix the longer they sit.</li>
+        <li><strong>Fix:</strong> rename slugs, add 301 redirects to preserve any link equity built up.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">High</span>
@@ -648,12 +672,12 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 05 · Network</span>
-      <h3>Strengthen franchisor homepage SEO basics.</h3>
+      <span class="opp-rank">Fix 05 · Brand</span>
+      <h3>Strengthen the franchisor homepage SEO basics.</h3>
       <ul class="opp-list">
-        <li><strong>Current:</strong> Title <em>"Professional Painting Services | Colour Craft."</em> Meta: <em>"...across multiple markets."</em> H1: <em>"Residential and Commercial."</em></li>
-        <li><strong>Issue:</strong> no service keyword, no location anchor, no compelling click-through copy.</li>
-        <li><strong>Fix:</strong> keyword + brand pattern at minimum. e.g. "House Painters Across Canada & the US | Colour Craft Painting."</li>
+        <li><strong>Current state:</strong> Title <em>"Professional Painting Services | Colour Craft."</em> Meta <em>"...across multiple markets."</em> H1 <em>"Residential and Commercial."</em></li>
+        <li><strong>Issue:</strong> the franchisor homepage is the brand's flagship page. Right now it has no service keyword, no location anchor, and meta copy that reads like a brochure.</li>
+        <li><strong>Fix:</strong> keyword + brand pattern. Something like <em>"House Painters Across Canada & the US · Colour Craft Painting."</em></li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">High</span>
@@ -663,27 +687,27 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 06 · Network</span>
-      <h3>Add FAQ schema + audit page weight.</h3>
+      <span class="opp-rank">Fix 06 · Brand-wide</span>
+      <h3>Burnaby gap, FAQ schema, page weight.</h3>
       <ul class="opp-list">
-        <li><strong>FAQ:</strong> location pages already have FAQ-style sections in body copy. Mark them up as <code>FAQPage</code> to unlock "people also ask" placements.</li>
-        <li><strong>Page weight:</strong> homepage is 722KB. Run PageSpeed Insights, target sub-2.5-second LCP on mobile.</li>
-        <li><strong>Both:</strong> template-level, apply once, cascade everywhere.</li>
+        <li><strong>Burnaby:</strong> 19,000-word single page with no neighborhood sub-pages. Either a strategic choice or an oversight. Worth a decision either way.</li>
+        <li><strong>FAQ schema:</strong> location pages already contain FAQ-style content. Marking them up as <code>FAQPage</code> unlocks "people also ask" placements.</li>
+        <li><strong>Page weight:</strong> franchisor homepage is 722KB. Run PageSpeed Insights, target sub-2.5s LCP on mobile.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">Medium</span>
         <span class="badge med">Med effort</span>
         <span class="badge med">Med impact</span>
-        <span class="badge network">Network-wide</span>
+        <span class="badge brand">Brand-wide</span>
       </div>
     </div>
 
     <div class="callout">
       <p class="callout-label">Suggested sequence</p>
       <ul>
-        <li><strong>Ship first:</strong> Fixes 01, 02, 03. Lowest effort, highest leverage, all network-wide.</li>
-        <li><strong>Ship next:</strong> Fix 04 (Philadelphia typos) before any link equity builds up on the bad URLs.</li>
-        <li><strong>Queue:</strong> Fix 05 (franchisor homepage copy) needs your sign-off. Fix 06 is a 60-day item.</li>
+        <li><strong>Ship first:</strong> Fixes 01, 02, 03. Lowest effort, highest leverage, all brand-wide.</li>
+        <li><strong>Ship next:</strong> Fix 04 (Philadelphia typos) before more link equity accrues to the bad URLs.</li>
+        <li><strong>Queue:</strong> Fix 05 needs your sign-off on copy direction. Fix 06 is a 60-day item.</li>
       </ul>
     </div>
   </div>
@@ -693,7 +717,7 @@
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 05</p>
     <h2>Outside Basecoat.</h2>
-    <p class="lede">Three items that sit at the franchisor or franchisee level, not the agency.</p>
+    <p class="lede">Three items at the franchisor or franchisee level. Worth deciding who owns each.</p>
 
     <div class="opportunity">
       <span class="opp-rank">Item A · Franchisor</span>
@@ -709,8 +733,8 @@
       <span class="opp-rank">Item B · Coordination</span>
       <h3>Search Console + GA4 access for franchisees.</h3>
       <ul class="opp-list">
-        <li>Franchisees currently can't see which queries their microsites rank for or how the GA4 data is shaping up.</li>
-        <li><strong>Action:</strong> have Basecoat grant viewer access to franchisee owners on the GSC + GA4 properties. Costs nothing, unlocks data-driven decisions at the franchisee level.</li>
+        <li>Franchisees currently can't see which queries their microsites rank for or whether GA4 is configured correctly.</li>
+        <li><strong>Action:</strong> Basecoat grants viewer access to franchisee owners on GSC + GA4. Costs nothing, unlocks data-driven decisions at every territory.</li>
       </ul>
     </div>
 
@@ -719,10 +743,10 @@
       <h3>Local levers Basecoat can't pull.</h3>
       <ul class="opp-list">
         <li>Google Business Profile completeness (services, products, posts, Q&A, photos).</li>
-        <li>Review velocity. Richmond-Delta is at 49 reviews vs. Makus (Richmond competitor) at 161.</li>
+        <li>Review velocity. Richmond-Delta sits at 49 reviews vs. local leader at 161.</li>
         <li>Citation NAP consistency across HomeStars, BBB, Yelp, Houzz.</li>
         <li>Google Local Services Ads enrollment + Google Guaranteed badge.</li>
-        <li><strong>Framing:</strong> Basecoat owns the on-site half. Franchisee owns the off-site half. Both move in parallel.</li>
+        <li><strong>Framing:</strong> Basecoat owns the on-site half. Franchisees own the off-site half. Both move in parallel.</li>
       </ul>
     </div>
   </div>
@@ -731,17 +755,17 @@
 <section class="audit-section dark" id="vision">
   <div class="wrap">
     <p class="section-eyebrow">Section 06</p>
-    <h2>Network-wide win.</h2>
+    <h2>What this becomes.</h2>
 
     <div class="vision-card">
-      <p>With the template-level fixes shipped, every Colour Craft microsite (Richmond-Delta, Philadelphia, and every future franchise) inherits a clean technical foundation on day one.</p>
+      <p>With the template-level fixes shipped, Colour Craft as a brand walks into 2027 with:</p>
       <ul>
-        <li>Schema renders correctly across the network.</li>
-        <li>Sub-sitemaps surface in Search Console without manual rescue.</li>
-        <li>Each franchisee inherits an indexable, rich-result-eligible local site from launch.</li>
-        <li>FAQ markup compounds organic visibility on cost + process queries.</li>
+        <li>Clean, rich-result-eligible schema across every microsite.</li>
+        <li>Every sub-sitemap surfaced in Search Console without manual rescue.</li>
+        <li>Every existing franchise (Vancouver, Burnaby, Richmond-Delta, Philadelphia) ranking on stronger fundamentals.</li>
+        <li>Every future franchise inheriting an indexable, ranking-ready local site on day one.</li>
       </ul>
-      <p style="margin-top:14px;"><strong>The leverage is in the template.</strong> Fix once at the franchisor level, every existing and future franchise benefits without rework.</p>
+      <p style="margin-top:14px;"><strong>The leverage is in the template.</strong> Fix once at the franchisor level, every market and every future market benefits without rework.</p>
     </div>
   </div>
 </section>
