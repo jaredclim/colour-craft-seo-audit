@@ -526,7 +526,7 @@
         <li><strong>"painters Richmond BC":</strong> Colour Craft not on page 1. Top results: CertaPro, Houzz, BBB, Hemlock, Tall Guy.</li>
         <li><strong>"painters Delta BC":</strong> Colour Craft not on page 1. Top results: CertaPro, Houzz, Delta's Best Painters, Weiler, Tall Guy.</li>
         <li><strong>"house painters Vancouver BC":</strong> Colour Craft not on page 1. Top results: Crest, CertaPro, Picasshome, Cypress, Heritage, Hemlock.</li>
-        <li><strong>"Colour Craft Painting Richmond"</strong> (brand search): top result is <code>colourcraft.ca</code>, not <code>colourcraftpainting.com</code>. See Item A in Section 05.</li>
+        <li><strong>"Colour Craft Painting Richmond"</strong> (brand search): Google's top result still points to the old <code>colourcraft.ca</code> URL. The redirect works (clicking it lands on the new site), but Google has not yet replaced the legacy URL in its index. Item A in Section 05 will accelerate that update.</li>
       </ul>
     </div>
   </div>
@@ -723,15 +723,16 @@
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 05</p>
     <h2>Outside Basecoat.</h2>
-    <p class="lede">Five items at the franchisor, partnership, or franchisee level. Worth deciding who owns each. Item A is the single most critical thing on this entire page.</p>
+    <p class="lede">Five additional items spanning Basecoat coordination, franchisor decisions, and franchisee-side levers. A and C are quick wins Basecoat can ship in an afternoon and they directly support Jared's microsite ranking.</p>
 
     <div class="opportunity">
-      <span class="opp-rank">Item A · Franchisor · 🚨 Highest priority</span>
-      <h3>Two Colour Craft domains are running the same content.</h3>
+      <span class="opp-rank">Item A · Basecoat · 🚨 Highest-priority quick win</span>
+      <h3>Old <code>colourcraft.ca</code> URLs are redirecting to dead pages.</h3>
       <ul class="opp-list">
-        <li><strong>In plain English:</strong> <code>colourcraft.ca</code> and <code>colourcraftpainting.com</code> are serving identical pages (same homepage title, same meta, same H1, same phone number, same file size). They look like the same website on two different addresses.</li>
-        <li><strong>What happens because of it:</strong> Google sees this as duplicate content and has to pick one version to rank. Right now it's picking <code>colourcraft.ca</code> over the main domain. When someone searches "Colour Craft Painting Richmond," they land on the legacy domain instead of the current one. Brand authority is being split between two URLs that should be one.</li>
-        <li><strong>The decision:</strong> Pick a primary domain (likely <code>colourcraftpainting.com</code> since it carries the microsite structure) and 301-redirect the other one to consolidate. Or vice versa if <code>.ca</code> has stronger backlinks. Either way, the current setup is leaking the brand's authority.</li>
+        <li><strong>The good news:</strong> Basecoat is correctly 301-redirecting <code>colourcraft.ca</code> to <code>colourcraftpainting.com</code> as they said. The homepage redirect works, and most major paths work.</li>
+        <li><strong>The subtle problem:</strong> The OLD site used a <code>/locations/{city}/</code> URL structure. The NEW site uses different paths (<code>/richmond-delta/richmond-bc/</code>, <code>/vancouver/</code>, <code>/philadelphia/</code>). The old URLs 301 to a path that doesn't exist anymore, so they land on 404 errors.</li>
+        <li><strong>What gets lost:</strong> Every external backlink pointing to the old <code>/locations/*</code> URLs (HomeStars, BBB, directories, news mentions, anything from before the site rebuild) currently lands on a 404. The SEO authority from those backlinks is being thrown away instead of transferred to the new pages.</li>
+        <li><strong>The ask for Basecoat:</strong> Add per-URL 301s mapping the old structure to the new microsites. Example: <code>/locations/richmond/</code> → <code>/richmond-delta/richmond-bc/</code>, <code>/locations/vancouver/</code> → <code>/vancouver/</code>, <code>/locations/philadelphia/</code> → <code>/philadelphia/</code>. Roughly a one-hour task. Preserves every backlink that ever pointed at the old site.</li>
       </ul>
     </div>
 
@@ -746,12 +747,13 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Item C · Partnership decision</span>
-      <h3>Vancouver microsite has live pages for Richmond, Delta, Tsawwassen, and Ladner.</h3>
+      <span class="opp-rank">Item C · Basecoat</span>
+      <h3>The Vancouver microsite is competing with the Richmond-Delta microsite for the same keywords.</h3>
       <ul class="opp-list">
-        <li><strong>What's happening:</strong> The Vancouver microsite has full content pages at <code>/vancouver/richmond/</code>, <code>/vancouver/delta/</code>, <code>/vancouver/tsawwassen/</code>, and <code>/vancouver/ladner/</code>. All return live 200-status pages targeting Jared's exclusive franchise territory.</li>
-        <li><strong>Why it matters:</strong> Two Colour Craft microsites competing for the same local keywords on the same domain split ranking signals between them. It's also a franchise governance question, separate from SEO.</li>
-        <li><strong>The decision:</strong> Either redirect those Vancouver-namespace pages to their Richmond-Delta equivalents (cleanest SEO outcome, single canonical version per territory) or formally clarify whose territory the URLs serve. This is a Brad and Jared conversation, not a Basecoat task.</li>
+        <li><strong>What's happening:</strong> The Vancouver microsite has live pages at <code>/vancouver/richmond/</code>, <code>/vancouver/delta/</code>, <code>/vancouver/tsawwassen/</code>, and <code>/vancouver/ladner/</code>. The Richmond-Delta microsite has its own pages for the same cities. Both sets of pages return 200-status and each claims itself as the canonical version.</li>
+        <li><strong>Why it hurts SEO (not partnership, leads still route correctly):</strong> Two pages on the same domain targeting the same keywords is called keyword cannibalization. Google has to pick one of the two to rank for "Richmond painters" and ends up either picking one and demoting the other, or splitting ranking signals so neither performs as well as a consolidated single page would.</li>
+        <li><strong>Three concrete impacts:</strong> (1) Google demotes one of the two pages or splits authority. (2) Internal links from the franchisor home and other pages dilute across both URLs instead of consolidating to one. (3) Google's crawl budget is wasted indexing two pages that should be one.</li>
+        <li><strong>The ask for Basecoat:</strong> 301-redirect the Vancouver-namespace overlap pages to their Richmond-Delta equivalents. <code>/vancouver/richmond/</code> → <code>/richmond-delta/richmond-bc/</code>, <code>/vancouver/delta/</code> → <code>/richmond-delta/delta/</code>, and same for Tsawwassen and Ladner. Vancouver keeps Squamish, Whistler, West Vancouver, etc. Consolidates all the SEO benefit to one canonical page per territory.</li>
       </ul>
     </div>
 
