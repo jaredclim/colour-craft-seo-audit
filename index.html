@@ -519,6 +519,16 @@
       <p class="callout-label">The headline</p>
       <p>Colour Craft is built on the right foundation. The defects below sit at the franchisor template level, which means a small set of fixes lifts the entire brand, every existing market, and every future franchise.</p>
     </div>
+
+    <div class="callout red">
+      <p class="callout-label">What live Google rankings show today (verified May 10, 2026)</p>
+      <ul>
+        <li><strong>"painters Richmond BC":</strong> Colour Craft not on page 1. Top results: CertaPro, Houzz, BBB, Hemlock, Tall Guy.</li>
+        <li><strong>"painters Delta BC":</strong> Colour Craft not on page 1. Top results: CertaPro, Houzz, Delta's Best Painters, Weiler, Tall Guy.</li>
+        <li><strong>"house painters Vancouver BC":</strong> Colour Craft not on page 1. Top results: Crest, CertaPro, Picasshome, Cypress, Heritage, Hemlock.</li>
+        <li><strong>"Colour Craft Painting Richmond"</strong> (brand search): top result is <code>colourcraft.ca</code>, not <code>colourcraftpainting.com</code>. See Item A in Section 05.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -682,10 +692,13 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 06 · Brand-wide</span>
-      <h3>Two smaller wins: FAQ markup and page speed.</h3>
+      <h3>Smaller wins to clean up in the same pass.</h3>
       <ul class="opp-list">
         <li><strong>FAQ markup, in plain English:</strong> The location pages already contain FAQ-style content (questions and answers about pricing, process, timing). Adding a small piece of hidden code that labels it as "FAQ" lets Google display those answers directly inside search results, which significantly increases click-through.</li>
-        <li><strong>Page speed, in plain English:</strong> The franchisor homepage is unusually heavy at 722KB. On mobile networks this slows the page load, which hurts both ranking and visitor experience. Basecoat should run a speed test and identify what's causing the bloat.</li>
+        <li><strong>Page speed, in plain English:</strong> The franchisor homepage is 722KB. The Vancouver homepage is 1.36MB. On mobile networks this slows the load, which hurts both ranking and visitor experience. Basecoat should run a speed test and identify what's causing the bloat.</li>
+        <li><strong>Mobile accessibility:</strong> The site currently prevents users from pinch-zooming on mobile (a setting in the page code). That's an accessibility violation and hurts Google's mobile-experience scoring. One-line fix in the template.</li>
+        <li><strong>Brand-name consistency in code:</strong> The hidden business name varies across microsites: <em>"Colour Craft"</em>, <em>"Colour Craft Painting"</em>, <em>"Colour Craft Vancouver"</em>, <em>"Colourcraft Philadelphia"</em> (one word!). Should be standardized to one canonical brand name across every page.</li>
+        <li><strong>Security headers:</strong> The site is on Cloudflare but isn't using modern security headers (HSTS, content security policy, frame protection). Cloudflare can add all of these via a single rule. Small but signals professionalism to Google.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">Medium</span>
@@ -710,20 +723,40 @@
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 05</p>
     <h2>Outside Basecoat.</h2>
-    <p class="lede">Three items at the franchisor or franchisee level. Worth deciding who owns each.</p>
+    <p class="lede">Five items at the franchisor, partnership, or franchisee level. Worth deciding who owns each. Item A is the single most critical thing on this entire page.</p>
 
     <div class="opportunity">
-      <span class="opp-rank">Item A · Franchisor</span>
-      <h3>Brand-typo domain recovery.</h3>
+      <span class="opp-rank">Item A · Franchisor · 🚨 Highest priority</span>
+      <h3>Two Colour Craft domains are running the same content.</h3>
       <ul class="opp-list">
-        <li><code>colorcraftpainting.com</code> (American spelling) redirects to a third-party link shortener (<code>l.ink</code>).</li>
-        <li>Brand traffic from US-keyboard typing or voice search is being captured by someone outside Colour Craft.</li>
-        <li><strong>Action:</strong> acquire the domain and 301-redirect to the Canadian spelling, or pursue legal transfer if it appears to be cybersquatting.</li>
+        <li><strong>In plain English:</strong> <code>colourcraft.ca</code> and <code>colourcraftpainting.com</code> are serving identical pages (same homepage title, same meta, same H1, same phone number, same file size). They look like the same website on two different addresses.</li>
+        <li><strong>What happens because of it:</strong> Google sees this as duplicate content and has to pick one version to rank. Right now it's picking <code>colourcraft.ca</code> over the main domain. When someone searches "Colour Craft Painting Richmond," they land on the legacy domain instead of the current one. Brand authority is being split between two URLs that should be one.</li>
+        <li><strong>The decision:</strong> Pick a primary domain (likely <code>colourcraftpainting.com</code> since it carries the microsite structure) and 301-redirect the other one to consolidate. Or vice versa if <code>.ca</code> has stronger backlinks. Either way, the current setup is leaking the brand's authority.</li>
       </ul>
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Item B · Coordination</span>
+      <span class="opp-rank">Item B · Franchisor</span>
+      <h3>Brand-typo domain recovery.</h3>
+      <ul class="opp-list">
+        <li><code>colorcraftpainting.com</code> (American spelling) redirects to a third-party link shortener (<code>l.ink</code>).</li>
+        <li>Brand traffic from US-keyboard typing or voice search is being captured by someone outside Colour Craft.</li>
+        <li><strong>Action:</strong> acquire the domain and 301-redirect to whichever primary domain Brad chooses in Item A, or pursue legal transfer if it appears to be cybersquatting.</li>
+      </ul>
+    </div>
+
+    <div class="opportunity">
+      <span class="opp-rank">Item C · Partnership decision</span>
+      <h3>Vancouver microsite has live pages for Richmond, Delta, Tsawwassen, and Ladner.</h3>
+      <ul class="opp-list">
+        <li><strong>What's happening:</strong> The Vancouver microsite has full content pages at <code>/vancouver/richmond/</code>, <code>/vancouver/delta/</code>, <code>/vancouver/tsawwassen/</code>, and <code>/vancouver/ladner/</code>. All return live 200-status pages targeting Jared's exclusive franchise territory.</li>
+        <li><strong>Why it matters:</strong> Two Colour Craft microsites competing for the same local keywords on the same domain split ranking signals between them. It's also a franchise governance question, separate from SEO.</li>
+        <li><strong>The decision:</strong> Either redirect those Vancouver-namespace pages to their Richmond-Delta equivalents (cleanest SEO outcome, single canonical version per territory) or formally clarify whose territory the URLs serve. This is a Brad and Jared conversation, not a Basecoat task.</li>
+      </ul>
+    </div>
+
+    <div class="opportunity">
+      <span class="opp-rank">Item D · Coordination</span>
       <h3>Search Console + GA4 access for franchisees.</h3>
       <ul class="opp-list">
         <li>Franchisees currently can't see which queries their microsites rank for or whether GA4 is configured correctly.</li>
@@ -732,7 +765,7 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Item C · Franchisee</span>
+      <span class="opp-rank">Item E · Franchisee</span>
       <h3>Local levers Basecoat can't pull.</h3>
       <ul class="opp-list">
         <li>Google Business Profile completeness (services, products, posts, Q&A, photos).</li>
