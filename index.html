@@ -469,8 +469,8 @@
         <li><a href="#territories">Where Colour Craft shows up</a></li>
         <li><a href="#strengths">What's working</a></li>
         <li><a href="#diagnosis">The honest read</a></li>
-        <li><a href="#fixes">Critical fixes for Basecoat</a></li>
-        <li><a href="#beyond">Outside Basecoat</a></li>
+        <li><a href="#fixes">Fixes for Basecoat</a></li>
+        <li><a href="#beyond">Beyond the technical fixes</a></li>
         <li><a href="#vision">What this becomes</a></li>
       </ol>
     </div>
@@ -526,7 +526,7 @@
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 02</p>
     <h2>Where Colour Craft shows up.</h2>
-    <p class="lede">Three active markets, all built from the same franchisor template. Strengths and gaps are shared.</p>
+    <p class="lede">Three active markets, all built from the same franchisor template.</p>
 
     <div class="territory-grid">
       <div class="territory-card gold-top">
@@ -535,19 +535,18 @@
         <ul>
           <li>28 sub-pages, deepest microsite in the network</li>
           <li>19,650-word homepage</li>
-          <li><span class="green-flag">✓</span> Strong title and meta</li>
-          <li><span class="red-flag">✗</span> Sub-sitemap not referenced in root</li>
+          <li><span class="green-flag">✓</span> Localized pages for Squamish, Whistler, West/North/East Vancouver</li>
+          <li><span class="red-flag">✗</span> Hosts duplicate pages targeting Richmond, Delta, Tsawwassen, Ladner (Fix 05)</li>
         </ul>
       </div>
-      <div class="territory-card">
+      <div class="territory-card gold-top">
         <p class="city">Richmond & Delta · BC · Jared</p>
         <p class="territory-name">Richmond, Delta, Steveston, Tsawwassen, Ladner</p>
         <ul>
           <li>21 sub-pages, 6 neighborhood pages</li>
+          <li>7,536-word homepage</li>
           <li><span class="green-flag">✓</span> Localized angles per neighborhood</li>
-          <li><span class="green-flag">✓</span> Unique titles and meta per location</li>
-          <li><span class="red-flag">✗</span> No schema on location pages</li>
-          <li><span class="red-flag">✗</span> Currently not ranking page 1 for core keywords</li>
+          <li><span class="green-flag">✓</span> Unique titles, meta, H1 per location</li>
         </ul>
       </div>
       <div class="territory-card gold-top">
@@ -555,9 +554,9 @@
         <p class="territory-name">Chestnut Hill, Lower Merion, King of Prussia, Radnor, Media</p>
         <ul>
           <li>21 sub-pages, 5 neighborhood pages</li>
-          <li>Mirror structure to Richmond-Delta</li>
-          <li><span class="red-flag">✗</span> URL typo: <code>/randor-township-wayne/</code></li>
-          <li><span class="red-flag">✗</span> URL typo: <code>/king-of-prussias/</code></li>
+          <li>7,724-word homepage</li>
+          <li><span class="red-flag">✗</span> URL typo: <code>/randor-township-wayne/</code> (Fix 06)</li>
+          <li><span class="red-flag">✗</span> URL typo: <code>/king-of-prussias/</code> (Fix 06)</li>
         </ul>
       </div>
     </div>
@@ -599,7 +598,7 @@
 <section class="audit-section" id="fixes">
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 04</p>
-    <h2>Critical fixes for Basecoat.</h2>
+    <h2>Fixes for Basecoat.</h2>
     <p class="lede">Ordered by impact. Most live in the franchisor template, so one fix lifts every territory.</p>
 
     <div class="opportunity">
@@ -651,7 +650,40 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 04 · Philadelphia</span>
+      <span class="opp-rank">Fix 04 · Brand-wide</span>
+      <h3>Backlinks pointing at the old <code>colourcraft.ca</code> URLs are landing on dead pages.</h3>
+      <ul class="opp-list">
+        <li><strong>The good news:</strong> Basecoat is correctly 301-redirecting <code>colourcraft.ca</code> to <code>colourcraftpainting.com</code> for top-level paths. The homepage redirect works, and major paths work.</li>
+        <li><strong>The subtle problem:</strong> The old site used a <code>/locations/{city}/</code> URL structure. The new site uses different paths (<code>/richmond-delta/richmond-bc/</code>, <code>/vancouver/</code>, <code>/philadelphia/</code>). The old URLs 301 to a path that doesn't exist anymore, so they land on 404 errors.</li>
+        <li><strong>What gets lost:</strong> Every external backlink pointing to the old <code>/locations/*</code> URLs (HomeStars, BBB, directories, news mentions, anything from before the site rebuild) currently lands on a 404. The SEO authority from those backlinks is being thrown away instead of transferred to the new pages.</li>
+        <li><strong>The ask:</strong> Basecoat adds per-URL 301s mapping the old structure to the new microsites. Example: <code>/locations/richmond/</code> → <code>/richmond-delta/richmond-bc/</code>, <code>/locations/vancouver/</code> → <code>/vancouver/</code>, <code>/locations/philadelphia/</code> → <code>/philadelphia/</code>. Roughly a one-hour task. Preserves every backlink that ever pointed at the old site.</li>
+      </ul>
+      <div class="opp-meta">
+        <span class="badge med">High</span>
+        <span class="badge low">Low effort</span>
+        <span class="badge high">High impact</span>
+        <span class="badge brand">Brand-wide</span>
+      </div>
+    </div>
+
+    <div class="opportunity">
+      <span class="opp-rank">Fix 05 · Brand-wide</span>
+      <h3>The Vancouver microsite has duplicate pages targeting the same keywords as Richmond-Delta.</h3>
+      <ul class="opp-list">
+        <li><strong>In plain English:</strong> The Vancouver microsite has live pages at <code>/vancouver/richmond/</code>, <code>/vancouver/delta/</code>, <code>/vancouver/tsawwassen/</code>, and <code>/vancouver/ladner/</code>. The Richmond-Delta microsite has its own pages for the same cities. Both sets of pages return 200-status and each claims itself as the canonical version.</li>
+        <li><strong>What happens because of it:</strong> Two pages on the same domain targeting the same keywords is called keyword cannibalization. Google has to pick one of the two to rank for "Richmond painters" and ends up either picking one and demoting the other, or splitting ranking signals so neither performs as well as a consolidated single page would. Internal authority dilutes across both URLs, and crawl budget is wasted indexing duplicate pages.</li>
+        <li><strong>The ask:</strong> Basecoat 301-redirects the Vancouver-namespace overlap pages to their Richmond-Delta equivalents. <code>/vancouver/richmond/</code> → <code>/richmond-delta/richmond-bc/</code>, <code>/vancouver/delta/</code> → <code>/richmond-delta/delta/</code>, and same for Tsawwassen and Ladner. Vancouver keeps Squamish, Whistler, West/North/East Vancouver. Consolidates all the SEO benefit to one canonical page per territory.</li>
+      </ul>
+      <div class="opp-meta">
+        <span class="badge med">High</span>
+        <span class="badge low">Low effort</span>
+        <span class="badge high">High impact</span>
+        <span class="badge brand">Brand-wide</span>
+      </div>
+    </div>
+
+    <div class="opportunity">
+      <span class="opp-rank">Fix 06 · Philadelphia</span>
       <h3>Two of GianCarlo's neighborhood pages have typos in the URL.</h3>
       <ul class="opp-list">
         <li><strong>In plain English:</strong> The web address for the Radnor Township page is misspelled as <code>/randor-township-wayne/</code>. The King of Prussia page is misspelled as <code>/king-of-prussias/</code>. Both are major affluent suburbs in the Philadelphia market.</li>
@@ -666,7 +698,7 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 05 · Brand</span>
+      <span class="opp-rank">Fix 07 · Franchisor homepage</span>
       <h3>The franchisor homepage doesn't say what Colour Craft does or where.</h3>
       <ul class="opp-list">
         <li><strong>In plain English:</strong> When someone searches "Colour Craft" in Google, the result currently shows <em>"Professional Painting Services · Colour Craft"</em> with a description saying the brand operates <em>"across multiple markets."</em> No service keyword, no location, nothing compelling to click on.</li>
@@ -681,7 +713,7 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Fix 06 · Brand-wide</span>
+      <span class="opp-rank">Fix 08 · Brand-wide</span>
       <h3>Smaller wins to clean up in the same pass.</h3>
       <ul class="opp-list">
         <li><strong>FAQ markup, in plain English:</strong> The location pages already contain FAQ-style content (questions and answers about pricing, process, timing). Adding a small piece of hidden code that labels it as "FAQ" lets Google display those answers directly inside search results, which significantly increases click-through.</li>
@@ -698,37 +730,17 @@
       </div>
     </div>
 
-    <div class="callout gold">
-      <p class="callout-label">If you send Basecoat only one email, send this list</p>
-      <ul>
-        <li><strong>Ship in one afternoon (highest leverage, lowest effort):</strong> Fix 01 (schema placeholder) · Fix 02 (location-page schema) · Fix 03 (microsite sitemaps in root) · Item A in Section 05 (old <code>/locations/</code> URL mapping) · Item C in Section 05 (Vancouver-namespace overlap pages).</li>
-        <li><strong>Ship in the same week:</strong> Fix 04 (Philadelphia URL typos) before more link equity accrues to the bad URLs.</li>
-        <li><strong>Queue:</strong> Fix 05 (homepage copy) needs your sign-off on direction. Fix 06 (FAQ, speed, accessibility, security) is a 60-day cleanup pass.</li>
-        <li><strong>Coordination ask:</strong> Item D in Section 05 (Search Console + GA4 + backlink-audit access for franchisees).</li>
-      </ul>
-    </div>
   </div>
 </section>
 
 <section class="audit-section cream" id="beyond">
   <div class="wrap-wide">
     <p class="section-eyebrow">Section 05</p>
-    <h2>Outside Basecoat.</h2>
-    <p class="lede">Five additional items spanning Basecoat coordination, franchisor decisions, and franchisee-side levers. A and C are quick wins Basecoat can ship in an afternoon and they directly support Jared's microsite ranking.</p>
+    <h2>Beyond the technical fixes.</h2>
+    <p class="lede">Three items that aren't direct code fixes: a franchisor brand-protection move, a coordination ask, and the franchisee-side work that runs in parallel.</p>
 
     <div class="opportunity">
-      <span class="opp-rank">Item A · Basecoat · 🚨 Highest-priority quick win</span>
-      <h3>Old <code>colourcraft.ca</code> URLs are redirecting to dead pages.</h3>
-      <ul class="opp-list">
-        <li><strong>The good news:</strong> Basecoat is correctly 301-redirecting <code>colourcraft.ca</code> to <code>colourcraftpainting.com</code> as they said. The homepage redirect works, and most major paths work.</li>
-        <li><strong>The subtle problem:</strong> The OLD site used a <code>/locations/{city}/</code> URL structure. The NEW site uses different paths (<code>/richmond-delta/richmond-bc/</code>, <code>/vancouver/</code>, <code>/philadelphia/</code>). The old URLs 301 to a path that doesn't exist anymore, so they land on 404 errors.</li>
-        <li><strong>What gets lost:</strong> Every external backlink pointing to the old <code>/locations/*</code> URLs (HomeStars, BBB, directories, news mentions, anything from before the site rebuild) currently lands on a 404. The SEO authority from those backlinks is being thrown away instead of transferred to the new pages.</li>
-        <li><strong>The ask for Basecoat:</strong> Add per-URL 301s mapping the old structure to the new microsites. Example: <code>/locations/richmond/</code> → <code>/richmond-delta/richmond-bc/</code>, <code>/locations/vancouver/</code> → <code>/vancouver/</code>, <code>/locations/philadelphia/</code> → <code>/philadelphia/</code>. Roughly a one-hour task. Preserves every backlink that ever pointed at the old site.</li>
-      </ul>
-    </div>
-
-    <div class="opportunity">
-      <span class="opp-rank">Item B · Franchisor</span>
+      <span class="opp-rank">Item A · Franchisor</span>
       <h3>Brand-typo domain recovery.</h3>
       <ul class="opp-list">
         <li><code>colorcraftpainting.com</code> (American spelling) redirects to a third-party link shortener (<code>l.ink</code>).</li>
@@ -738,27 +750,16 @@
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Item C · Basecoat</span>
-      <h3>The Vancouver microsite is competing with the Richmond-Delta microsite for the same keywords.</h3>
-      <ul class="opp-list">
-        <li><strong>What's happening:</strong> The Vancouver microsite has live pages at <code>/vancouver/richmond/</code>, <code>/vancouver/delta/</code>, <code>/vancouver/tsawwassen/</code>, and <code>/vancouver/ladner/</code>. The Richmond-Delta microsite has its own pages for the same cities. Both sets of pages return 200-status and each claims itself as the canonical version.</li>
-        <li><strong>Why it hurts SEO (not partnership, leads still route correctly):</strong> Two pages on the same domain targeting the same keywords is called keyword cannibalization. Google has to pick one of the two to rank for "Richmond painters" and ends up either picking one and demoting the other, or splitting ranking signals so neither performs as well as a consolidated single page would.</li>
-        <li><strong>Three concrete impacts:</strong> (1) Google demotes one of the two pages or splits authority. (2) Internal links from the franchisor home and other pages dilute across both URLs instead of consolidating to one. (3) Google's crawl budget is wasted indexing two pages that should be one.</li>
-        <li><strong>The ask for Basecoat:</strong> 301-redirect the Vancouver-namespace overlap pages to their Richmond-Delta equivalents. <code>/vancouver/richmond/</code> → <code>/richmond-delta/richmond-bc/</code>, <code>/vancouver/delta/</code> → <code>/richmond-delta/delta/</code>, and same for Tsawwassen and Ladner. Vancouver keeps Squamish, Whistler, West Vancouver, etc. Consolidates all the SEO benefit to one canonical page per territory.</li>
-      </ul>
-    </div>
-
-    <div class="opportunity">
-      <span class="opp-rank">Item D · Coordination</span>
+      <span class="opp-rank">Item B · Coordination</span>
       <h3>Data access for franchisees + a one-time backlink audit.</h3>
       <ul class="opp-list">
         <li><strong>Search Console + GA4:</strong> Franchisees currently can't see which queries their microsites rank for or whether GA4 is configured correctly. Basecoat grants viewer access to franchisee owners. Costs nothing, unlocks data-driven decisions at every territory.</li>
-        <li><strong>One-time backlink audit:</strong> Without Ahrefs or Semrush data, no one knows the brand's current backlink position. Ask Basecoat to export a one-time backlink report so you can see which sites point at <code>colourcraft.ca</code> vs <code>colourcraftpainting.com</code>, what anchor text is being used, and whether the old <code>/locations/</code> URLs have meaningful equity worth recovering via Item A.</li>
+        <li><strong>One-time backlink audit:</strong> Without Ahrefs or Semrush data, no one knows the brand's current backlink position. Ask Basecoat to export a one-time backlink report so you can see which sites point at <code>colourcraft.ca</code> vs <code>colourcraftpainting.com</code>, what anchor text is being used, and whether the old <code>/locations/</code> URLs have meaningful equity worth recovering via Fix 04.</li>
       </ul>
     </div>
 
     <div class="opportunity">
-      <span class="opp-rank">Item E · Franchisee</span>
+      <span class="opp-rank">Item C · Franchisee</span>
       <h3>Local levers Basecoat can't pull.</h3>
       <ul class="opp-list">
         <li>Google Business Profile completeness (services, products, posts, Q&A, photos).</li>
