@@ -244,9 +244,12 @@
   .callout.gold { background: var(--gold-soft); border-color: var(--gold-deep); }
   .callout.green { background: var(--green-soft); border-color: var(--green); }
   .callout.red { background: var(--red-soft); border-color: var(--red); }
-  .callout.dark { background: rgba(255, 174, 0, 0.08); border-color: var(--gold); color: #f5e9cf; }
-  .callout.dark p { color: #f5e9cf; }
-  .callout.dark p strong { color: #fff; }
+  .callout.dark { background: var(--white); border-color: var(--gold); color: var(--text); border-left-width: 4px; }
+  .callout.dark p { color: var(--text); }
+  .callout.dark p strong { color: var(--brown-deep); }
+  .callout.dark .callout-label { color: var(--brown); }
+  .callout.dark ul { padding-left: 18px; }
+  .callout.dark ul li { color: var(--text); margin: 6px 0; line-height: 1.5; }
   .callout-label {
     font-size: 12px;
     font-weight: 700;
@@ -481,9 +484,9 @@
 
     <div class="stat-grid">
       <div class="stat-card">
-        <p class="label">Territories online</p>
-        <div class="value">4</div>
-        <div class="sub">Vancouver, Burnaby, Richmond-Delta, Philadelphia</div>
+        <p class="label">Active markets online</p>
+        <div class="value">3</div>
+        <div class="sub">Vancouver, Richmond-Delta, Philadelphia</div>
       </div>
       <div class="stat-card">
         <p class="label">Pages built across brand</p>
@@ -536,24 +539,15 @@
           <li><span class="red-flag">✗</span> Sub-sitemap not referenced in root</li>
         </ul>
       </div>
-      <div class="territory-card muted-top">
-        <p class="city">Burnaby · BC</p>
-        <p class="territory-name">Burnaby (single page)</p>
-        <ul>
-          <li>One landing page, no sub-pages</li>
-          <li>19,441 words on one page</li>
-          <li><span class="red-flag">✗</span> No sub-sitemap (returns 404)</li>
-          <li><span class="red-flag">✗</span> No neighborhood pages, unlike sister markets</li>
-        </ul>
-      </div>
       <div class="territory-card">
         <p class="city">Richmond & Delta · BC · Jared</p>
         <p class="territory-name">Richmond, Delta, Steveston, Tsawwassen, Ladner</p>
         <ul>
           <li>21 sub-pages, 6 neighborhood pages</li>
-          <li>Already #1 organic for "painters Delta BC"</li>
           <li><span class="green-flag">✓</span> Localized angles per neighborhood</li>
+          <li><span class="green-flag">✓</span> Unique titles and meta per location</li>
           <li><span class="red-flag">✗</span> No schema on location pages</li>
+          <li><span class="red-flag">✗</span> Currently not ranking page 1 for core keywords</li>
         </ul>
       </div>
       <div class="territory-card gold-top">
@@ -576,10 +570,10 @@
     <h2>What's working for the brand.</h2>
 
     <ul class="strengths">
-      <li><strong>Real digital footprint across four markets.</strong>Most painting brands operate from a single page. Colour Craft has 70+ indexed-ready pages spanning two countries.</li>
+      <li><strong>Real digital footprint across three active markets.</strong>Most painting brands operate from a single page. Colour Craft has 70+ pages built and indexed across two countries.</li>
       <li><strong>Content depth above local competitors.</strong>7,000+ word location pages while most local painters publish 800-1,500. Genuine moat once technical fixes ship.</li>
       <li><strong>On-page basics correct at the location level.</strong>Unique titles, meta descriptions, and H1s across most neighborhood pages.</li>
-      <li><strong>Proof the system works when aligned.</strong>Richmond-Delta already ranks #1 organic for "painters Delta BC."</li>
+      <li><strong>Strong content foundation ready to rank.</strong>The pages are built. The technical fixes below are what turns "built" into "ranking on page one."</li>
     </ul>
   </div>
 </section>
@@ -588,15 +582,15 @@
   <div class="wrap">
     <div class="callout dark">
       <p class="callout-label">The honest read</p>
-      <p><strong>Strong content, weak technical hygiene, defects baked into the franchisor template.</strong></p>
+      <p><strong>Strong content. Weak technical foundation. Some defects are baked into the template every microsite uses.</strong></p>
     </div>
     <div class="callout dark">
-      <p class="callout-label">What this means in plain English</p>
+      <p class="callout-label">In plain English</p>
       <ul>
-        <li>"Still being indexed" explains some of why microsites aren't fully ranking yet.</li>
-        <li>It doesn't explain the schema placeholder, missing FAQ markup, sitemap structure, or URL typos.</li>
-        <li>Those are build-time defects. Indexation can't resolve them.</li>
-        <li>A capable web team can clear most of them in an afternoon.</li>
+        <li>The pages Basecoat built are good. Google likes them.</li>
+        <li>But the pages have small hidden errors in their underlying code that confuse Google about what the business is and where it serves.</li>
+        <li>"Still being indexed" only explains part of the slowness. The rest is fixable code defects that waiting won't solve.</li>
+        <li>A capable web team can clear most of them in a single afternoon.</li>
       </ul>
     </div>
   </div>
@@ -610,11 +604,11 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 01 · Brand-wide</span>
-      <h3>Replace the broken schema placeholder.</h3>
+      <h3>The hidden identity code on Colour Craft's homepage has a typo.</h3>
       <ul class="opp-list">
-        <li><strong>Defect:</strong> franchisor homepage JSON-LD contains <code>"telephone":"COMPANYPHONE"</code>, a literal placeholder.</li>
-        <li><strong>Fix:</strong> rebuild as proper <code>LocalBusiness</code> with name, address, telephone, geo, areaServed, openingHours, priceRange, aggregateRating, sameAs.</li>
-        <li><strong>Why it matters:</strong> the broken schema is what Google reads as Colour Craft's "entity card." Right now it's malformed brand-wide.</li>
+        <li><strong>In plain English:</strong> Google reads invisible code on every business website to understand what the business is, where it operates, and how to contact it. Colour Craft's homepage has the literal word "COMPANYPHONE" sitting in that code where the actual phone number should be. It was a placeholder the developer forgot to replace before launch.</li>
+        <li><strong>What happens because of it:</strong> Google sees Colour Craft as a malformed business entity and won't show rich results (star ratings, phone tap, address) for the brand in search.</li>
+        <li><strong>The ask:</strong> Basecoat replaces the placeholder with proper business information markup (name, address, phone, hours, service area, ratings). Roughly an hour of work.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge critical">Critical</span>
@@ -626,11 +620,11 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 02 · Brand-wide</span>
-      <h3>Add schema to every location page.</h3>
+      <h3>Location pages don't tell Google "this is a local painter for this city."</h3>
       <ul class="opp-list">
-        <li><strong>Defect:</strong> all 11 neighborhood pages across Richmond-Delta + Philadelphia have zero structured data. Vancouver appears to be missing it too.</li>
-        <li><strong>Fix:</strong> per-page <code>LocalBusiness</code> + <code>Service</code> schema with proper <code>areaServed</code>. Add to franchisor template so every future franchise inherits.</li>
-        <li><strong>Why now:</strong> unlocks local rich results across the entire brand at once.</li>
+        <li><strong>In plain English:</strong> The neighborhood pages (Steveston, Tsawwassen, King of Prussia, Chestnut Hill, etc.) read well to a human but contain none of the hidden code that tells Google "this is a painting business that serves this specific city." Without that code, Google treats them as generic blog posts.</li>
+        <li><strong>What happens because of it:</strong> The pages don't compete for local pack placements or rich local search results, which is exactly the kind of search the brand should be winning.</li>
+        <li><strong>The ask:</strong> Basecoat adds local business + service markup to every location page, ideally at the template level so future franchises inherit it automatically.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge critical">Critical</span>
@@ -642,11 +636,11 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 03 · Brand-wide</span>
-      <h3>Reference every microsite sitemap in root robots.txt.</h3>
+      <h3>Google doesn't have an official map of all the new pages.</h3>
       <ul class="opp-list">
-        <li><strong>Defect:</strong> root <code>robots.txt</code> only points to the franchisor sitemap. Vancouver, Richmond-Delta, and Philadelphia microsites each have their own sub-sitemap that's not referenced anywhere Google reliably looks.</li>
-        <li><strong>Fix:</strong> add a <code>Sitemap:</code> line for each microsite. Submit each in Google Search Console.</li>
-        <li><strong>Why this matters now:</strong> this is the most likely real cause behind "still being indexed."</li>
+        <li><strong>In plain English:</strong> Every website hands Google a list of its pages (called a sitemap) so Google knows what to index. The Colour Craft main site hands Google a sitemap, but it doesn't include any of the Vancouver, Richmond-Delta, or Philadelphia microsite pages. Google has to find those pages by stumbling onto them through links instead.</li>
+        <li><strong>What happens because of it:</strong> Google crawls and ranks those pages much more slowly. This is the single most likely cause behind Basecoat's "still being indexed" message.</li>
+        <li><strong>The ask:</strong> Basecoat updates the main site's instructions to Google to include each microsite's sitemap, then submits each one in Google Search Console. Roughly 30 minutes of work.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge critical">Critical</span>
@@ -658,11 +652,11 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 04 · Philadelphia</span>
-      <h3>Fix the two URL typos in Philadelphia.</h3>
+      <h3>Two of GianCarlo's neighborhood pages have typos in the URL.</h3>
       <ul class="opp-list">
-        <li><strong>Defect:</strong> <code>/philadelphia/randor-township-wayne/</code> should be <code>radnor</code>. <code>/philadelphia/king-of-prussias/</code> should be <code>king-of-prussia</code>.</li>
-        <li><strong>Risk:</strong> typo URLs in major affluent suburbs hurt CTR, hurt brand credibility, and become harder to fix the longer they sit.</li>
-        <li><strong>Fix:</strong> rename slugs, add 301 redirects to preserve any link equity built up.</li>
+        <li><strong>In plain English:</strong> The web address for the Radnor Township page is misspelled as <code>/randor-township-wayne/</code>. The King of Prussia page is misspelled as <code>/king-of-prussias/</code>. Both are major affluent suburbs in the Philadelphia market.</li>
+        <li><strong>What happens because of it:</strong> Typos in URLs reduce click-through rate, hurt brand credibility with detail-oriented homeowners, and get harder to fix the longer they stay live (because Google starts ranking them, and changing them risks breaking those rankings).</li>
+        <li><strong>The ask:</strong> Basecoat renames the pages to the correct spellings and adds redirects from the old typo URLs to the new clean ones.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">High</span>
@@ -673,11 +667,11 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 05 · Brand</span>
-      <h3>Strengthen the franchisor homepage SEO basics.</h3>
+      <h3>The franchisor homepage doesn't say what Colour Craft does or where.</h3>
       <ul class="opp-list">
-        <li><strong>Current state:</strong> Title <em>"Professional Painting Services | Colour Craft."</em> Meta <em>"...across multiple markets."</em> H1 <em>"Residential and Commercial."</em></li>
-        <li><strong>Issue:</strong> the franchisor homepage is the brand's flagship page. Right now it has no service keyword, no location anchor, and meta copy that reads like a brochure.</li>
-        <li><strong>Fix:</strong> keyword + brand pattern. Something like <em>"House Painters Across Canada & the US · Colour Craft Painting."</em></li>
+        <li><strong>In plain English:</strong> When someone searches "Colour Craft" in Google, the result currently shows <em>"Professional Painting Services · Colour Craft"</em> with a description saying the brand operates <em>"across multiple markets."</em> No service keyword, no location, nothing compelling to click on.</li>
+        <li><strong>What happens because of it:</strong> Even when the brand shows up in search, the click-through rate is hurt, and Google has less context to rank the homepage for relevant searches.</li>
+        <li><strong>The ask:</strong> Basecoat rewrites the homepage title, description, and main heading to clearly state what Colour Craft does and where. Example: <em>"House Painters Across Canada & the US · Colour Craft Painting."</em></li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">High</span>
@@ -688,11 +682,10 @@
 
     <div class="opportunity">
       <span class="opp-rank">Fix 06 · Brand-wide</span>
-      <h3>Burnaby gap, FAQ schema, page weight.</h3>
+      <h3>Two smaller wins: FAQ markup and page speed.</h3>
       <ul class="opp-list">
-        <li><strong>Burnaby:</strong> 19,000-word single page with no neighborhood sub-pages. Either a strategic choice or an oversight. Worth a decision either way.</li>
-        <li><strong>FAQ schema:</strong> location pages already contain FAQ-style content. Marking them up as <code>FAQPage</code> unlocks "people also ask" placements.</li>
-        <li><strong>Page weight:</strong> franchisor homepage is 722KB. Run PageSpeed Insights, target sub-2.5s LCP on mobile.</li>
+        <li><strong>FAQ markup, in plain English:</strong> The location pages already contain FAQ-style content (questions and answers about pricing, process, timing). Adding a small piece of hidden code that labels it as "FAQ" lets Google display those answers directly inside search results, which significantly increases click-through.</li>
+        <li><strong>Page speed, in plain English:</strong> The franchisor homepage is unusually heavy at 722KB. On mobile networks this slows the page load, which hurts both ranking and visitor experience. Basecoat should run a speed test and identify what's causing the bloat.</li>
       </ul>
       <div class="opp-meta">
         <span class="badge med">Medium</span>
@@ -762,7 +755,7 @@
       <ul>
         <li>Clean, rich-result-eligible schema across every microsite.</li>
         <li>Every sub-sitemap surfaced in Search Console without manual rescue.</li>
-        <li>Every existing franchise (Vancouver, Burnaby, Richmond-Delta, Philadelphia) ranking on stronger fundamentals.</li>
+        <li>Every active market (Vancouver, Richmond-Delta, Philadelphia) ranking on stronger fundamentals.</li>
         <li>Every future franchise inheriting an indexable, ranking-ready local site on day one.</li>
       </ul>
       <p style="margin-top:14px;"><strong>The leverage is in the template.</strong> Fix once at the franchisor level, every market and every future market benefits without rework.</p>
